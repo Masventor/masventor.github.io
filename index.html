@@ -3,9 +3,35 @@
   <head>
     <meta charset="utf-8">
     <title>Masventor</title>
+    <style media="screen">
+        body{
+          background: #2244ff;
+          color: #ffffff;
+          font-size: 1.2rem;
+          font-family: monospace;
+          padding: 24px;
+        }
+    </style>
   </head>
   <body>
-    <h1>Скоро...</h1>
-    <p>Совсем близко</p>
+    <h1 id="soon">Скоро</h1>
+    <p>Совсем близко ;)</p>
+    <script type="text/javascript">
+
+      let obj = document.getElementById('soon');
+      let key = 0;
+      let soon = "Скоро";
+
+      setInterval(function(){
+        if (key < 3) {
+            soon = soon + ".";
+            key++;
+        }else{
+            soon = soon.replace("...","");
+            key=0;
+        }
+        obj.innerText = soon;
+      }, 320);
+    </script>
   </body>
 </html>
