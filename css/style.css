@@ -15,8 +15,29 @@ p {
   line-height: 2rem;
 }
 
+.primary{
+  /* background-color: rgba(30,40,50,0.5); */
+  background-color: #005ca9;
+  border-radius: 6px;
+  /* border: 2px solid #ffffff; */
+}
+
+.primary:hover{
+  background-color: #005ca9;
+  /* border: 2px solid transparent; */
+}
+.primary:focus,
+.primary:active {
+  background-color: #005ca9 !important;
+  /* border: 2px solid transparent; */
+}
+
+.primary-text{
+  color: #005ca9;
+}
+
 .sidenav-trigger {
-  color: #26a69a;
+  color: #000;
 }
 
 .parallax-container {
