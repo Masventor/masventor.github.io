@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>TechUni</title>
+<link rel="stylesheet" href="design.css">
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<meta charset="utf-8">
+<script src="jquery.min.js"></script>
+
+</head>
+<body>
+<style>
+body{
+ background:#fff;
+ color:#222;
+}
+#title{
+ font-weight:bold;
+ font-size:1.5rem;
+ margin:30px 10%;
+ text-align:center;
+}			
+.form{
+ border:0px solid #ccc;
+ margin-top:32px;
+ text-align:center;
+ margin: 12px;
+ background: #f1f1f1f;
+ border-radius:16px;
+ box-shadow: 0 5px 16px 0.1px #ccc;
+ padding: 16px 0px;
+}	
+input{
+ display:block;
+ margin:20px 10%;
+ padding:12px;
+ width:80%;
+ outline:none;
+ border-radius:6px;
+ box-sizing:border-box;
+}
+input[type="text"], input[type="password"] {
+ background:#fff;
+ color:#2d2d2d;
+ border:1px solid #dedede;
+ transition: all 0.1s;
+}
+input:focus{
+  border:1px solid #007cfe;
+  transition:all 0.1s;
+} 
+input[type="submit"]{
+ background:#007cfe;
+ color:#fff;
+ border:1px solid #007cfe;
+ transition:all 0.1s;
+}
+input[type="submit"]:active{
+			transform:scale(0.95);
+			transition:all 0.1s;
+}
+input[type="submit"]:hover{
+				background:#005cde;
+				transition:all 0.1s;
+}
+.logo{
+  width:30%;
+  height:auto;
+  padding: 16px;
+  align:center;
+  border-radius:100%;
+  background:#007cfe;
+  margin-bottom:16px;
+} 
+</style>
+<center>
+<div id="title">Донишгоҳи техникии Тоҷикистон</div>
+<img src="http://is.techuni.tj/assets/images/logo.png" class="logo">
+<form class="form" action="http://is.techuni.tj/index.php?control=login" method="post" autocomplete="on">
+		<input type="hidden" placeholder="Секунд"  name="sTime" id="sTime">
+		<input type="text"	placeholder="Логин" name="sLogin" type="text" autocomplete="on" value="07-0886/19">
+		<input type="password" placeholder="Рамз" name="sPassword" autocomplete="on" value="088631">
+		<input type="submit" id="btn" value="Ворид шудан" name="go">
+</form>
+</center>
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
