@@ -10,6 +10,11 @@
     body{
     background-color: var(--tg-theme-bg-color);
 } 
+
+.tgme_head_right_btn{
+background-color: var(--tg-theme-button-color);
+}
+
    .textfield-item {
     outline: 0px solid red;
     margin:2px 6%;
@@ -19,13 +24,13 @@
     padding: 4px 12px;
    } 
    .textfield-item-underline{
-    border-color: var(--tg-theme-button-color) !important;
+    border-bottom: 1px solid var(--tg-theme-button-color) !important;
     border-radius:10px 10px 0 0;
     margin:0px 12px;
    }
    .textfield-item input.form-control{
     paddind:8px;
-    border:none !important;
+    border:none;
    }
    label{
     margin: 0 8%;
@@ -53,9 +58,9 @@
    font-size: 1.5em;
    margin:10px 6px 16px 6px;
    }
-::placeholder{
-color: var(--tg-theme-hint-color);
-}
+   ::placeholder{
+    color: var(--tg-theme-hint-color);
+   }
 </style>
 
 
@@ -85,7 +90,7 @@ color: var(--tg-theme-hint-color);
 </div> </div> 
  <label class="col-md-3 control-label">Пароль:</label> <div class="col-md-6"> <div class="textfield-item"> <input id="share_comment" name="share_comment" type="password" maxlength="10" class="form-control" placeholder="Введите пароль" onFocus="inputFocus()"> <div class="textfield-item-underline"></div> </div> </div>
  
- <div class="col-md-6"> <input name="sign_in" type="button" class="button-item" value="Войти" onclick="sendData()"> 
+ <div class="col-md-6"> <input name="sign_in" type="button" class="button-item" value="Войти" onClick="sendText()"> 
 
   </div>
 
@@ -94,8 +99,9 @@ color: var(--tg-theme-hint-color);
 
    <script>
     let x=window.Telegram.WebApp;
-    function senData(){
+    function senText(){
      x.sendData(initData("text"));
+     x.close();
     }
 
    function inputFocus(){ x.expand(); }
