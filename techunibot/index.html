@@ -19,7 +19,7 @@
     padding: 4px 12px;
    } 
    .textfield-item-underline{
-    border-bottom-color: var(--tg-theme-button-color);
+    border-color: var(--tg-theme-button-color) !important;
     border-radius:10px 10px 0 0;
     margin:0px 12px;
    }
@@ -53,6 +53,9 @@
    font-size: 1.5em;
    margin:10px 6px 16px 6px;
    }
+::placeholder{
+color: var(--tg-theme-hint-color);
+}
 </style>
 
 
@@ -78,9 +81,9 @@
       <br><b>Donishgohi teknikii Tojikiston</b>
        </center-->
            
-<p><form class="form-horizontal form-telegram clearfix" id="share_widget_config"> <div class="form-group"> <label class="col-md-3 control-label">Логин:</label> <div class="col-md-6"> <div class="textfield-item"> <input id="share_url" name="share_url" type="text" maxlength="10" class="form-control" placeholder="Введите ID"> <div class="textfield-item-underline"></div>
+<p><form class="form-horizontal form-telegram clearfix" id="share_widget_config"> <div class="form-group"> <label class="col-md-3 control-label">Логин:</label> <div class="col-md-6"> <div class="textfield-item"> <input id="share_url" name="share_url" type="text" maxlength="10" class="form-control" placeholder="Введите ID" onFocus="inputFocus()"> <div class="textfield-item-underline"></div>
 </div> </div> 
- <label class="col-md-3 control-label">Пароль:</label> <div class="col-md-6"> <div class="textfield-item"> <input id="share_comment" name="share_comment" type="password" maxlength="10" class="form-control" placeholder="Введите пароль"> <div class="textfield-item-underline"></div> </div> </div>
+ <label class="col-md-3 control-label">Пароль:</label> <div class="col-md-6"> <div class="textfield-item"> <input id="share_comment" name="share_comment" type="password" maxlength="10" class="form-control" placeholder="Введите пароль" onFocus="inputFocus()"> <div class="textfield-item-underline"></div> </div> </div>
  
  <div class="col-md-6"> <input name="sign_in" type="button" class="button-item" value="Войти" onclick="sendData()"> 
 
@@ -91,9 +94,11 @@
 
    <script>
     let x=window.Telegram.WebApp;
-    //function senData(){
+    function senData(){
      x.sendData(initData("text"));
-    //}
+    }
+
+   function inputFocus(){ x.expand(); }
    
    </script>
    
