@@ -343,8 +343,8 @@
     function sendData() {
           
         
-        let login = $('#login');
-        let password = $('#password');
+        let login = $('#login').val();
+        let password = $('#password').val();
         
         if(login.length != '' and password != ''){
         var data = JSON.stringify({
