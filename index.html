@@ -1,0 +1,33 @@
+<script>
+    // Get the URL parameter value
+    function getUrlParameter(name) {
+        name = name.replace(/[[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        if (results !== null && results[1]) {
+            return decodeURIComponent(results[1].replace(/\+/g, " "));
+        } else {
+            var pathArray = location.pathname.split('/');
+            var nameIndex = pathArray.indexOf(name);
+            if (nameIndex !== -1 && pathArray.length > nameIndex + 1) {
+                return decodeURIComponent(pathArray[nameIndex + 1]);
+            }
+        }
+        return "";
+    }
+
+    // Check if the URL parameter exists and redirect accordingly
+    function checkAndRedirect() {
+        var telParam = getUrlParameter("tel");
+        var mailtoParam = getUrlParameter("mailto");
+
+        if (telParam !== "") {
+            window.location.href = "tel:" + telParam;
+        } else if (mailtoParam !== "") {
+            window.location.href = "mailto:" + mailtoParam;
+        }
+    }
+
+    // Call the function to check and redirect
+    checkAndRedirect();
+</script>
