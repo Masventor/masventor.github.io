@@ -20,11 +20,14 @@
     function checkAndRedirect() {
         var telParam = getUrlParameter("tel");
         var mailtoParam = getUrlParameter("mailto");
+        var geoParam = getUrlParameter("geo");
 
         if (telParam !== "") {
             window.location.href = "tel:" + telParam;
         } else if (mailtoParam !== "") {
             window.location.href = "mailto:" + mailtoParam;
+        } else if (geoParam != "") {
+            window.location.href = "geo:" + mailtoParam;
         }
     }
 
